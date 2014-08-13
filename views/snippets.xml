@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+<template id="simple_contact_snippet" inherit_id="website.snippets" name="E-Mail Subscribe">
+	<xpath expr="//div[@id='snippet_content']" position="inside">
+			
+			<div>
+				<div class="oe_snippet_thumbnail">
+					<img class="oe_snippet_thumbnail_img" src="/website/static/src/img/blocks/block_text_block.png"/>
+					<span class="oe_snippet_thumbnail_title">Email Block</span>
+				</div>
+				<section class="oe_snippet_body js_simple_contact">
+					<div class="form-inline js_simple_contact_form">
+							<input name="lead_name" type="text" required="True" placeholder="your name" class="form-control js_lead_name"></input>
+							<input name="lead_email" type="email" required="True" placeholder="your email" class="form-control js_lead_email"></input>
+							<button class="btn js_simple_contact_btn">Zum Fragebogen</button>
+					</div>
+				</section>
+			</div>
+	</xpath>
+	<xpath expr="//div[@id='snippet_options']" position="inside">
+		<div data-snippet-option-id='simple_contact_snippet'
+				data-selector=".js_simple_contact"
+				data-selector-siblings="p, h1, h2, h3, blockquote, .well, .panel">
+				<li>
+					<a href="#" class="button js_simple_contact_survey">Survey</a>
+				</li>
+			</div>
+	</xpath>
+</template>
+</data>
+</openerp>

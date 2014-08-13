@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+<data>
+<record id="website_simple_contact_lead_view" model="ir.ui.view">
+		<field name="model">crm.lead</field>
+		<field name="inherit_id" ref="crm.crm_case_form_view_leads"/>
+		<field name="arch" type="xml">
+			<xpath expr="//div[@name='buttons']" position="inside">
+				<button string="Print Survey" 
+						class="oe_stat_button"
+						icon="fa-file-o" 
+						name="action_print_survey"
+						type="object" 
+						attrs="{'invisible':[('survey_id','=',False)]}"/>
+			</xpath>
+			<field name="partner_name" position="after">
+				<field name="survey_id" readonly="1"/>
+			</field>
+
+		</field>
+</record>
+<record id="website_simple_contact_oppor_view" model="ir.ui.view">
+		<field name="model">crm.lead</field>
+		<field name="inherit_id" ref="crm.crm_case_form_view_oppor"/>
+		<field name="arch" type="xml">
+			<button name="action_schedule_meeting" position="after">
+				<button string="Print Survey" 
+						class="oe_stat_button"
+						icon="fa-file-o" 
+						name="action_print_survey"
+						type="object"
+						attrs="{'invisible':[('survey_id','=',False)]}"/>
+			</button>
+			<field name="partner_id" position="after">
+				<field name="survey_id" readonly="1"/>
+			</field>
+		</field>
+</record>
+</data>
+</openerp>
